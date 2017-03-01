@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>740</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>串口调试-k</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"> background-color:   </string>
+  </property>
+  <property name="locale">
+   <locale language="Chinese" country="China"/>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <widget class="QDockWidget" name="dockWidgetmessage">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>2</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>96</width>
+        <height>113</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>524287</width>
+        <height>524287</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="floating">
+       <bool>false</bool>
+      </property>
+      <property name="features">
+       <set>QDockWidget::NoDockWidgetFeatures</set>
+      </property>
+      <property name="allowedAreas">
+       <set>Qt::AllDockWidgetAreas</set>
+      </property>
+      <property name="windowTitle">
+       <string>操作提示</string>
+      </property>
+      <widget class="QWidget" name="dockWidgetContents">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QTextBrowser" name="textBr_mess">
+          <property name="styleSheet">
+           <string notr="true"> border: 1px solid #8f8f91;
+         border-radius: 15px;
+         background-color: qlineargradient(x1: 1, y1: 2, x2: 1, y2: 2,
+                                           stop: 0 #f6f7fa, stop: 1 #dadbde);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>5</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string>接收数据</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="bt_clear">
+           <property name="statusTip">
+            <string>Clear input data</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: white;
+font: 9pt &quot;宋体&quot;;
+
+background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #88d, stop: 0.1 #99e, stop: 0.49 #77c, stop: 0.5 #66b, stop: 1 #77c);
+border-width: 1px;
+border-color: #339;
+border-style: solid;z
+border-radius: 7;
+padding: 3px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 70px;
+max-width: 75px;
+min-height: 16px;
+max-height: 16px;</string>
+           </property>
+           <property name="text">
+            <string>清空(&amp;K)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>308</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>接收格式(&amp;R)</string>
+           </property>
+           <property name="buddy">
+            <cstring>rbt_ASCIIin</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_1">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>58</width>
+             <height>17</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_ASCIIin">
+           <property name="text">
+            <string>ASCII</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_BINin">
+           <property name="text">
+            <string>BIN</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_HEXin">
+           <property name="text">
+            <string>HEX</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_Decin">
+           <property name="text">
+            <string>DEC</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="textBr_inp">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"> border: 1px solid #8f8f91;
+         border-radius: 15px;
+         background-color: qlineargradient(x1: 1, y1: 2, x2: 1, y2: 2,
+                                           stop: 0 #f6f7fa, stop: 1 #dadbde);
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>5</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string>发送数据</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>自动周期(&amp;T)</string>
+           </property>
+           <property name="buddy">
+            <cstring>spinBox_Period</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dial_time">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="singleStep">
+            <number>50</number>
+           </property>
+           <property name="pageStep">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBox_Period">
+           <property name="suffix">
+            <string> ms</string>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="singleStep">
+            <number>50</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QProgressBar" name="progressBar">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="bt_send">
+           <property name="statusTip">
+            <string>Send data</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>发送(&amp;S)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="bt_stopsend">
+           <property name="statusTip">
+            <string>Stop send</string>
+           </property>
+           <property name="text">
+            <string>停止(&amp;T)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>发送格式(&amp;L)</string>
+           </property>
+           <property name="buddy">
+            <cstring>rbt_ASCIIout</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>58</width>
+             <height>17</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_ASCIIout">
+           <property name="text">
+            <string>ASCII</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_BINout">
+           <property name="text">
+            <string>BIN</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_HEXout">
+           <property name="text">
+            <string>HEX</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbt_Decout">
+           <property name="text">
+            <string>DEC</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="textEd_out">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"> border: 1px solid #8f8f91;
+         border-radius: 15px;
+         background-color: qlineargradient(x1: 1, y1: 2, x2: 1, y2: 2,
+                                           stop: 0 #f6f7fa, stop: 1 #dadbde);
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>2</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string>串口设置</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>端口(&amp;P)</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_port</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_port"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QPushButton" name="bt_openport">
+           <property name="statusTip">
+            <string>Open port</string>
+           </property>
+           <property name="text">
+            <string>打开(&amp;O)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="bt_closeport">
+           <property name="statusTip">
+            <string>Close port</string>
+           </property>
+           <property name="text">
+            <string>关闭(&amp;C)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>21</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>波特率(&amp;B)</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_baudrate</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_baudrate"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>数据位</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_databyte"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>停止位</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_stopbyte"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>校验</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_parity"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>流控</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_flcntrl"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QPushButton" name="bt_apply">
+           <property name="font">
+            <font>
+             <family>新宋体</family>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
+           <property name="statusTip">
+            <string>Apply port settings</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>确定</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="bt_cancel">
+           <property name="statusTip">
+            <string>Cancel new settings </string>
+           </property>
+           <property name="text">
+            <string>取消</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>740</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="sizeGripEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>comboBox_port</tabstop>
+  <tabstop>comboBox_baudrate</tabstop>
+  <tabstop>comboBox_databyte</tabstop>
+  <tabstop>comboBox_stopbyte</tabstop>
+  <tabstop>comboBox_parity</tabstop>
+  <tabstop>comboBox_flcntrl</tabstop>
+  <tabstop>bt_apply</tabstop>
+  <tabstop>bt_cancel</tabstop>
+  <tabstop>bt_openport</tabstop>
+  <tabstop>bt_closeport</tabstop>
+  <tabstop>dial_time</tabstop>
+  <tabstop>spinBox_Period</tabstop>
+  <tabstop>rbt_ASCIIout</tabstop>
+  <tabstop>rbt_BINout</tabstop>
+  <tabstop>rbt_HEXout</tabstop>
+  <tabstop>rbt_Decout</tabstop>
+  <tabstop>textEd_out</tabstop>
+  <tabstop>rbt_ASCIIin</tabstop>
+  <tabstop>rbt_BINin</tabstop>
+  <tabstop>rbt_HEXin</tabstop>
+  <tabstop>rbt_Decin</tabstop>
+  <tabstop>textBr_inp</tabstop>
+  <tabstop>bt_send</tabstop>
+  <tabstop>bt_stopsend</tabstop>
+  <tabstop>bt_clear</tabstop>
+  <tabstop>textBr_mess</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>dial_time</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_Period</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>402</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_Period</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_time</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>476</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>402</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

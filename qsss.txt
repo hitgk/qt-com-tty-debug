@@ -1,0 +1,23 @@
+
+
+        QString qss;
+
+
+
+	    QFile qssFile(":/comk.qss");
+
+	    qssFile.open(QFile::ReadOnly);
+
+	    if(qssFile.isOpen())
+
+	    {
+
+		qss = QLatin1String(qssFile.readAll());
+
+		qApp->setStyleSheet(qss);
+
+		qssFile.close();
+
+		//qDebug()<<"qss ok";
+
+	    }
